@@ -13,6 +13,6 @@ sh 'npm test'
 }
 stage ('docker build/push') {
 docker.withRegistry('https://index.docker.io/v1/', 'dockerhub') {
-def app = docker.build("madhubuddy28/docker-nodejs-demo:${commit_id}", '.').push()
+def app = docker.build("madhubuddy28/docker-demo:${commit_id}", '.').push()
 }}
 }
