@@ -12,7 +12,7 @@ sh 'npm test'
 }
 }
 stage ('docker build/push') {
-docker.withRegistry('https://index.docker.io/v1/') {
+docker.withRegistry('https://index.docker.io/v1/', '621aa701-f996-4797-84ec-0a6cbba01505') {
 def app = docker.build("madhubuddy28/docker-demo:${commit_id}", '.').push()
 }}
 }
